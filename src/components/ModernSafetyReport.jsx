@@ -17,7 +17,7 @@ const ModernSafetyReport = ({ isOpen, onClose, onSubmit, capturedMedia = null })
     type: 'security',
     urgency: 'medium',
     description: '',
-    location: 'Detecting location...',
+    location: capturedMedia?.location || 'Detecting location...',
     visibility: 'public',
     anonymous: false
   })
@@ -169,7 +169,7 @@ const ModernSafetyReport = ({ isOpen, onClose, onSubmit, capturedMedia = null })
             </label>
             <div className="location-display">
               <MapPin size={16} />
-              <span>Lagos, Nigeria • Victoria Island</span>
+              <span>{reportData.location}</span>
               <button type="button" className="update-location">
                 Update
               </button>
